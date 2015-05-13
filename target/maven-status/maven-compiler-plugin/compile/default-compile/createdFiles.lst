@@ -1,0 +1,13 @@
+model\Task.class
+model\Projet.class
+hello\HomeController.class
+hello\CustomerRepository.class
+hello\Customer.class
+modelRepository\TaskRepository.class
+hello\MongoProjetService.class
+modelRepository\UserRepository.class
+hello\Application.class
+model\User.class
+hello\ProjetRepository.class
+hello\ProjetService.class
+hello\SimpleCORSFilter.class
