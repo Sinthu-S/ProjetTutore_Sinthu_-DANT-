@@ -1,6 +1,6 @@
 package modelRepository;
 
-import model.Task;
+import models.Task;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.1.8.RELEASE</version>
+		<version>1.1.9.RELEASE</version>
 	</parent>
 	<groupId>sinthu</groupId>
 	<artifactId>ProjetTutore_Sinthu</artifactId>
@@ -17,7 +17,7 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Configure the main class of our Spring Boot application -->
-		<start-class>hello.Application</start-class>
+		<start-class>controller.Application</start-class>
 	</properties>
 
 	<dependencies>
@@ -30,15 +30,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
-
 		<!-- Spring Data MongoDB -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
