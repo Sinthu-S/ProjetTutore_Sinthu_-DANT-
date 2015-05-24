@@ -3,7 +3,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta name="description" content=""/>
 	<meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"/>
 	<title>NewBiz Login</title>
 
@@ -16,22 +15,22 @@
 
 <body>
 
-	<div id="login-page">
+	<div id="login-page" ng-controller="ManagerController">
 		<div class="container">
 
-			<form class="form-login" action="tasks">
-				<h2 class="form-login-heading">Connexion</h2>
+			<form class="form-login">
+				<h2 class="form-login-heading">Manager App</h2>
 				<div class="login-wrap">
-					<input type="text" class="form-control" placeholder="Email"/>
+					<input type="text" class="form-control" placeholder="Email" ng-model="login"/>
 					<br></br>
-					<input type="password" class="form-control" placeholder="Mot de pass"/>
+					<input type="password" class="form-control" placeholder="Mot de pass" ng-model="pass"/>
 					<label class="checkbox">
 						<span class="pull-right">
-							<a data-toggle="modal" href="login.html#myModal"> Mot de pass oublié ?</a>
+							<a data-toggle="modal"> Mot de pass oublié ?</a>
 
 						</span>
 					</label>
-					<button class="btn btn-theme btn-block" href="tasks" type="submit"><i class="fa fa-lock"></i> Connexion</button>
+					<button ng-click="connexion()" class="btn btn-theme btn-block"  ><i class="fa fa-lock"></i> Connexion</button>
 					<hr></hr>
 
 				</div>
@@ -51,12 +50,18 @@
 							</div>
 							<div class="modal-footer">
 								<button data-dismiss="modal" class="btn btn-default" type="button">Annuler</button>
-								<button class="btn btn-theme" type="button">Valider</button>
+								<button class="btn btn-theme" type="button" >Valider</button>
 							</div>
 						</div>
 					</div>
+					
 				</div>
 
+				<div class="alert alert-danger" role="alert" ng-show="connexionEchec">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span class="sr-only">Error:</span>
+					Enter a valid email address
+				</div>
 			</form>	  	
 
 		</div>
@@ -64,6 +69,10 @@
 
 	<script src="./assets/js/jquery.js"></script>
 	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/jquery.js"></script>
+	<script src="./js/angular.min.js"></script>
+	<script src="./js/ManagerApp.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
 
 	<!--BACKSTRETCH-->
 	<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->

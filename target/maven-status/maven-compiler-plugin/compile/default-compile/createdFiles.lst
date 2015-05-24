@@ -1,13 +1,15 @@
+controller\service\UserService.class
 modelRepository\TaskRepository.class
 modelRepository\CustomerRepository.class
-modelRepository\UserRepository.class
 models\Task.class
 controller\controller\PageRouteController.class
 controller\controller\UserController.class
 controller\SimpleCORSFilter.class
+controller\repository\UserRepository.class
 controller\service\ProjetService.class
 controller\service\MongoProjetService.class
 models\Customer.class
+controller\service\MongoUserService.class
 controller\controller\HomeController.class
 controller\repository\ProjetRepository.class
 models\User.class

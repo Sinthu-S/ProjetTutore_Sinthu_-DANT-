@@ -12,14 +12,34 @@ public class User {
 	private String prenom;
 	private String service;
 	private String typeUser;
+	private String login;
+	private String pass;
 	private List<String> idProjet;
 	private List<String> notifacations;
+	public String token;
 	
 	public User(){
 		super();
 	}
 	
 	
+	
+	public User(String nom, String prenom, String service,
+			String typeUser, String login, String pass, List<String> idProjet,
+			List<String> notifacations) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.service = service;
+		this.typeUser = typeUser;
+		this.login = login;
+		this.pass = pass;
+		this.idProjet = idProjet;
+		this.notifacations = notifacations;
+	}
+
+
+
 	public String getNom() {
 		return nom;
 	}

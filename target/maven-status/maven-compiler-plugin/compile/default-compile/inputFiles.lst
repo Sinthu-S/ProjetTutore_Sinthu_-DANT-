@@ -1,12 +1,14 @@
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\controller\PageRouteController.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\service\ProjetService.java
-C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\modelRepository\UserRepository.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\Application.java
+C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\service\MongoUserService.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\controller\UserController.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\controller\HomeController.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\service\MongoProjetService.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\models\Customer.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\models\Task.java
+C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\service\UserService.java
+C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\repository\UserRepository.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\models\User.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\controller\repository\ProjetRepository.java
 C:\Users\S.Sinthu\workspace\ProjetTutore_Sinthu\src\main\java\modelRepository\TaskRepository.java
