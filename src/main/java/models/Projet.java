@@ -9,54 +9,65 @@ import org.springframework.data.annotation.Id;
 public class Projet {
 	
 	@Id
-	private String id;
-	
-	private String idClient;
-	private String idManager;
-	private List<String> listIdTask;
+	public String nom;
+	public String nomClient;
+	public String nomManager;
+	public List<Task> listIdTask;
 	
 	public Projet(String client){
-		this.idClient=client;
-		this.idManager=null;
-		this.setListIdTask(new ArrayList<String>());
+		this.nomClient=client;
+		this.nomManager=null;
+		this.setListIdTask(new ArrayList<Task>());
 	}
 	
 	public Projet(){
 		
 	}
 	
-	public Projet(String client, String manager){
-		this.idClient=client;
-		this.idManager=manager;
-		this.listIdTask=new ArrayList<String>();
+	public Projet(String nom, String client, String manager){
+		this.nom=nom;
+		this.nomClient=client;
+		this.nomManager=manager;
+		this.listIdTask=new ArrayList<Task>();
 	}
 	
 	public String getIdClient() {
-		return idClient;
+		return nomClient;
 	}
 	public void setIdClient(String idClient) {
-		this.idClient = idClient;
+		this.nomClient = idClient;
 	}
 	public String getIdManager() {
-		return idManager;
+		return nomManager;
 	}
 	public void setIdManager(String idManager) {
-		this.idManager = idManager;
+		this.nomManager = idManager;
 	}
 
-	public List<String> getListIdTask() {
+	public List<Task> getListIdTask() {
 		return listIdTask;
 	}
 
-	public void setListIdTask(List<String> listIdTask) {
+	public void setListIdTask(List<Task> listIdTask) {
 		this.listIdTask = listIdTask;
 	}
 	
+	
+
 	@Override
-    public String toString() {
-        return String.format(
-                "Custome");
-    }
+	public String toString() {
+		return "Projet [id= nom=" + nom + ", nomClient=" + nomClient
+				+ ", nomManager=" + nomManager + ", listIdTask=" + listIdTask
+				+ "]";
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 	
 	
 	

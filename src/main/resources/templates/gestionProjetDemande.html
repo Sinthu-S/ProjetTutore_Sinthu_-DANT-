@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html ng-app="ManagerApp">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"/>
+  <title>NomAppli</title>
+
+  <link href="./assets/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/zabuto_calendar.css"/>
+  <link rel="stylesheet" type="text/css" href="./assets/js/gritter/css/jquery.gritter.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/lineicons/style.css"/>    
+  <link href="./assets/css/style.css" rel="stylesheet"/>
+  <link href="./assets/css/style-responsive.css" rel="stylesheet"/>
+  <script src="./assets/js/chart-master/Chart.js"></script>
+</head>
+
+<body  ng-controller="homeManagerController">
+
+  <section id="container"  >
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+
+      <a href="index.html" class="logo"><b>MANGERAPP</b></a>
+
+
+      <div class="top-menu">
+       <ul class="nav pull-right top-menu">
+        <li><a class="logout" href="login.html" ng-click="deconnexion()">Logout</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header end-->
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+        <div id="sidebar"  class="nav-collapse ">
+          <!-- sidebar menu start-->
+          <ul class="sidebar-menu" id="nav-accordion">
+
+           <p class="centered"><a><img src="./assets/img/ui-sam.jpg" class="img-circle" width="60"></img></a></p>
+           <h5 class="centered">{{profileUser.nom}} {{profileUser.prenom}}</h5>
+
+           <li class="mt">
+            <a class="active" href="homeChefDeProjet.html">
+              <i class="fa fa-dashboard"></i>
+              <span>Accueil</span>
+            </a>
+          </li>
+
+          <li class="">
+            <a href="gestionProjetDemande.html">
+              <i class="fa fa-dashboard"></i>
+              <span>Gestion Projet</span>
+            </a>
+          </li>
+
+
+
+
+
+
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+
+
+        <div >
+
+
+          <h3> Projet </h3>
+          <select class="form-control placeholder-no-fix" ng-model="projet" ng-change="projetcourant()">
+            <option  ng-repeat="projetc in projets">{{projetc.nom}}</option>
+          </select>
+
+          <div class="row mt" >
+
+
+
+
+            <!-- SERVER STATUS PANELS -->
+            <div class="col-md-4 col-sm-4 mb  " ng-repeat="demande in projetCourant.listIdTask">
+              <div class="darkblue-panel pn" >
+
+
+                <h4 class="text-info"><font color="white">{{demande.titre}}</font></h4>
+                <div class="centered btn btn-primary">
+                  <i class="fa fa-folder-open fa-4x"></i>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{demande.etat}}" aria-valuemin="0" aria-valuemax="100" style="width: {{demande.etat}}%;">
+                    {{demande.etat}}%
+                  </div>
+                </div>
+                <h4 class="text-info"><font color="white">Developpeur : {{demande.loginDevloppeur}}</font></h4>
+                <h4 class="text-info"><font color="white">Service : {{demande.service}}</font></h4>
+
+                <a class="pull-left text-warning" data-toggle="modal" href="index.html#myModalModif{{$index}}"><i class="fa fa-pencil-square fa-4x"></i></a>
+
+              </div>
+
+
+
+
+              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModalModif{{$index}}" class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">{{demande.titre}}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                      <h4 class="text-info"><font color="grey">Description : {{demande.description}}</font></h4>
+                      <h4 class="text-info"><font color="grey">Service : {{demande.service}}</font></h4>
+                      <h4 class="text-info"><font color="grey">Technologie : {{demande.techno}}</font></h4>
+                      <h4 class="text-info"><font color="grey">Developpeur : {{demande.loginDevloppeur}}</font></h4>
+
+                      <a>Developpeur</a>
+                      <select class="form-control placeholder-no-fix" ng-model="demandeDev">
+                        <option ng-repeat="dev in developpeurs">{{dev.nom}} {{dev.prenom}}</option>
+                      </select>
+
+
+                      <a>Progression</a>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{demande.etat}}" aria-valuemin="0" aria-valuemax="100" style="width: {{demande.etat}}%;">
+                          {{demande.etat}}%
+                        </div>
+                      </div>
+
+                      <input type="text" placeholder="Nom" class="form-control placeholder-no-fix" ng-model="progression"/>
+
+
+                      <a>Commentaire</a>
+                      <input type="text" placeholder="Nom" class="form-control placeholder-no-fix" ng-model="commentaire"/>
+
+                      <div ng-repeat="comment in demande.commentaires">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <strong> {{comment.auteur}} </strong>
+                          </div>
+                          <div class="panel-body">
+                            {{comment.message}}
+                          </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                      </div><!-- /col-sm-5 -->
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                      <button data-dismiss="modal" class="btn btn-default" type="button">Fermer</button>
+                      <button class="btn btn-theme" type="button" ng-click="majProjet($index, progression, commentaire, demandeDev)">Valider</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div><!-- col-md-4-->
+
+
+
+
+
+
+
+          </div><!-- /row -->
+
+
+        </div>
+
+
+
+
+
+
+
+
+      <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->                  
+
+    </section>
+  </section>
+
+  <!--main content end-->
+
+</section>
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"></script>
+<script src="./assets/js/jquery-1.8.3.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script class="include" type="text/javascript" src="./assets/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="./assets/js/jquery.scrollTo.min.js"></script>
+<script src="./assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+<script src="./assets/js/jquery.sparkline.js"></script>
+
+
+<!--common script for all pages-->
+<script src="./assets/js/common-scripts.js"></script>
+
+<script type="text/javascript" src="./assets/js/gritter/js/jquery.gritter.js"></script>
+<script type="text/javascript" src="./assets/js/gritter-conf.js"></script>
+
+<!--script for this page-->
+<script src="./assets/js/sparkline-chart.js"></script>    
+<script src="./assets/js/zabuto_calendar.js"></script>  
+
+<script src="./js/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="./js/ManagerApp.js"></script>
+
+</body>
+</html>

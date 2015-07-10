@@ -6,36 +6,39 @@ import org.springframework.data.annotation.Id;
 
 public class User {
 	@Id
-	public String id;
+	private String login;
 	
 	private String nom;
 	private String prenom;
 	private String service;
 	private String typeUser;
-	private String login;
+	private String email;
 	private String pass;
-	private List<String> idProjet;
-	private List<String> notifacations;
+	public List<String> idProjet;
+	public List<Message> notifications;
 	public String token;
-	
+
 	public User(){
 		super();
 	}
 	
 	
-	
+
+
+
 	public User(String nom, String prenom, String service,
-			String typeUser, String login, String pass, List<String> idProjet,
-			List<String> notifacations) {
+			String typeUser,String email, String login, String pass, List<String> idProjet,
+			List<Message> notifacations) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.service = service;
 		this.typeUser = typeUser;
+		this.email = email;
 		this.login = login;
 		this.pass = pass;
 		this.idProjet = idProjet;
-		this.notifacations = notifacations;
+		this.notifications = notifacations;
 	}
 
 
@@ -59,6 +62,27 @@ public class User {
 		this.service = service;
 	}
 	
+	public String getTypeUser() {
+		return typeUser;
+	}
+	public void setTypeUser(String typeUser) {
+		this.typeUser = typeUser;
+	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	
 
 }

@@ -12,7 +12,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProjetRepository extends MongoRepository<Projet, String> {
 
-	public Projet findByidClient(String idClient);
-	//public List<Projet> findByLastName(String lastName);
+	public List<Projet> findByNomClient(String nomClient);
+	public List<Projet> findByNomManager(String nomManager);
+	public Projet findOneByNom(String nom);
+
 
 }

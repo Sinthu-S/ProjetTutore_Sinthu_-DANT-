@@ -1,6 +1,6 @@
 controller\service\UserService.class
-modelRepository\TaskRepository.class
 modelRepository\CustomerRepository.class
+controller\service\MongoTaskService.class
 models\Task.class
 controller\controller\PageRouteController.class
 controller\controller\UserController.class
@@ -9,9 +9,18 @@ controller\repository\UserRepository.class
 controller\service\ProjetService.class
 controller\service\MongoProjetService.class
 models\Customer.class
+controller\controller\ProjetController.class
+controller\repository\DeveloppeurRepository.class
 controller\service\MongoUserService.class
-controller\controller\HomeController.class
+controller\service\DeveloppeurService.class
+controller\service\TaskService.class
+models\Developpeur.class
 controller\repository\ProjetRepository.class
 models\User.class
+controller\controller\DeveloppeurController.class
 controller\Application.class
+controller\service\MongoDeveloppeurService.class
+controller\controller\TaskController.class
+models\Message.class
+controller\repository\TaskRepository.class
 models\Projet.class
